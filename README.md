@@ -5,3 +5,5 @@ Wanderjaunt Challenges
 ```
 docker-compose up 
 ```
+
+You can see the employees list [here](http://localhost:8000/employees)
