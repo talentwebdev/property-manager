@@ -50,7 +50,6 @@ class EmployeesView(View):
                 except:
                     raise InvalidNameError
                 
-                print(curret_last_name, last_name)
                 if curret_last_name <= last_name:
                     break
                 
@@ -87,8 +86,6 @@ class EmployeesView(View):
         template = loader.get_template("employees.html")
         employees = self.get_employees()
         employees_tree = self.generate_employee_tree(employees)
-        
-        print(employees_tree)
         
         return HttpResponse(template.render({
             "employees": self.get_employees_list(employees_tree)
