@@ -1,0 +1,20 @@
+# speech marks
+version: "3"
+
+services:
+  # we gonna have service named app
+  app: 
+    user: $UID:$GID
+    # build docker image
+    build:
+      # in current directory
+      context: .
+    ports:
+      - "8000:8000"
+    # whenever you change in local, it will automatically update in container
+    volumes:
+      # maps app directory to app directory in docker image
+      - ./app:/app
+    # : called collon
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
